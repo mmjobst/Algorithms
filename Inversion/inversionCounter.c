@@ -7,22 +7,6 @@ void swap(int* a, int* b);
 void randomList(int size, int* originalArray, int* randomArray);
 void inversions(int size, int* array);
 
-int main() {
-    int size;
-    int* originalArray;
-    int* randomArray;
-    printf("Enter the length of the array: ");
-    scanf("%i", &size);
-    sortedArray(size, &originalArray);
-    printf("\nThe random list is: ");
-    randomList(size, originalArray, randomArray);
-    printf("\nList of inversions: ");
-    inversions(size, originalArray);
-    free(originalArray);
-    free(randomArray);
-    return 0;
-}
-
 void sortedArray(int size, int** originalArray) {
     *originalArray = (int*)malloc(size * sizeof(int));
     printf("The sorted list is: ");
@@ -63,4 +47,20 @@ void inversions(int size, int* array) {
         numberOfInversions += count;
     }
     printf("\nThe number of inversions are: %d", numberOfInversions);
+}
+
+int main() {
+    int size;
+    int* originalArray;
+    int* randomArray;
+    printf("Enter the length of the array: ");
+    scanf("%i", &size);
+    sortedArray(size, &originalArray);
+    printf("\nThe random list is: ");
+    randomList(size, originalArray, randomArray);
+    printf("\nList of inversions: ");
+    inversions(size, originalArray);
+    free(originalArray);
+    free(randomArray);
+    return 0;
 }
